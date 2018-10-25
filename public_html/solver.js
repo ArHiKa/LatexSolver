@@ -291,7 +291,7 @@ function solve(inpt, gegeven, outpt, sign = true){
         //draw arrows
         for(let i = 0; i < symbolTexList.length; i++){
             let startElement = symbolTexList[i].origin.getBoundingClientRect();
-            let endElement = symbolTexList[i].block.getBoundingClientRect();
+            let endElement = symbolTexList[i].block.querySelectorAll('span.mjx-char')[0].getBoundingClientRect();
             let dxNext = 6;
             let dxPrev = 6;
             if(i < symbolTexList.length -1){
@@ -301,10 +301,7 @@ function solve(inpt, gegeven, outpt, sign = true){
             if(i > 0){
                 dxPrev = startElement.x - symbolTexList[i-1].origin.getBoundingClientRect().x;
             }
-            
-            
-            
-            
+                      
             let x1 = startElement.left + startElement.width/2;
             let x2 = endElement.left;
             let y1 = startElement.bottom;

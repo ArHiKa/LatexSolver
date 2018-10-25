@@ -9,8 +9,27 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="solver.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.2.0/math.js"></script>
+        <script src="http://algebrite.org/dist/latest-stable/algebrite.bundle-for-browser.js"></script>
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>        
+        <script type="text/javascript" src="solver.js"></script>
     </head>
-    <body>
-        <div>TODO write content</div>
+    
+    
+        <div id="solver">
+            <textarea id="gegevens">m=1.00
+s = 40.8
+t = 10.1</textarea>
+            <textarea id="input">F= m*a
+a = v/t
+v = s/t</textarea><br>
+            <button onclick="solve('input', 'gegevens', 'output')">test</button>
+        </div>
+        
+        
+        
+        <div id="output"></div>
+        
     </body>
 </html>

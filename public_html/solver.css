@@ -1,13 +1,5 @@
 textarea{
     width: 20em;
     height: 10em;
-}
-
-polyline {
-    fill: none;
-    stroke: black;
-    stroke-width: 1px;
-    border-width: 1px;
-    border-color: white;
-    marker-end: url(#arrow);
+    font-family: monospace;
 }

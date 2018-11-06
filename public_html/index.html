@@ -10,21 +10,22 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="solver.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.2.0/math.js"></script>
-        <script src="http://algebrite.org/dist/latest-stable/algebrite.bundle-for-browser.js"></script>
         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>        
-        <script type="text/javascript" src="solver.js"></script>
+        <script type="text/javascript" src="solve_2.0.js"></script>
     </head>
+    
+    <body onload="init();">
     
     
         <div id="solver">
-            <textarea id="gegevens">m=1.00
-s = 40.8
-t = 10.1</textarea>
-            <textarea id="input">F= m*a
-a = v/t
-v = s/t</textarea><br>
-            <button onclick="solve('input', 'gegevens', 'output')">test</button>
+            <textarea id="gegevens">eta = 9,9999999991E-1
+c = 3.00E8 'm/s
+R_A = 6,371E6 'm</textarea>
+            <textarea id="input">d_mu = d / gamma 'm
+gamma = 1/sqrt(1-v^2/c^2)
+v = eta * c
+d = R_A * 2</textarea><br>
+<button onclick="LatexSolver.run()">test</button>
         </div>
         
         

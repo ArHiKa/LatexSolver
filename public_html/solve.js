@@ -38,11 +38,6 @@ function solve(inpt, gegeven, outpt, sign = true){
      */
     var inputLines = input.split('\n');
     /**
-     * Text die door de calculator bereknd moet worden
-     * @type String
-     */
-    var calcText = gegevens + '\n';
-    /**
      * Is smallest significant number from gegevens
      * @type Number
      */
@@ -53,6 +48,7 @@ function solve(inpt, gegeven, outpt, sign = true){
     laadInput();
     printLatex();
     setTimeout(orderLatex, 500);// delay for 500 milliseconds so latex has time to form. X-poperties of printed latex are neccary
+
     
     function laadGegevens(){
          /*
@@ -75,6 +71,7 @@ function solve(inpt, gegeven, outpt, sign = true){
            if(anserAndUnit.length > 1){
                line.unit = anserAndUnit[1];
            }
+           
            
            
            //significantie tellen
@@ -328,6 +325,10 @@ function solve(inpt, gegeven, outpt, sign = true){
             let polyline = document.createElementNS('http://www.w3.org/2000/svg','polyline');
             polyline.setAttribute('points', '1,1 1,' + h + ' ' + w + ',' + h);
             polyline.setAttribute('marker-end', 'url(#arrow)');
+            polyline.style.fill = 'none';
+            polyline.style.stroke = 'black';
+            polyline.style.strokeWidth = '1px';
+ 
             
             svg.appendChild(polyline);
             output.appendChild(svg);
@@ -566,25 +567,11 @@ function solve(inpt, gegeven, outpt, sign = true){
     }
     
     function replaceByGreek(word){
-        let greekLetter = '';
         
-        switch (word){
-            
-            case 'gamma':
-                greekLetter = 'γ';
-                break;
-            
-            case 'rho':
-                greekLetter = 'ρ';
-                break;
-            
-            default: 
-                greekLetter = word;
-                break;
-        }
+       
         
         
-        return greekLetter;
+        return word;
     }
     
 }// end function solve
